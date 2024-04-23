@@ -1,0 +1,95 @@
+<app-header [bkButton]="false" [clase]="clase"></app-header>
+
+<ion-content fullscreen="true">
+  <div class="text_end">
+    <div class="row">
+      <div class="col-6 social-media">
+        <img src="../../../assets/img/facebook.png" (click)="openFB()"/> &nbsp;
+        <img src="../../../assets/img/instagram.png" (click)="openIG()"/>
+      </div>
+      <br />
+      <!--<a (click)="openWips()" class="title-color">WISP.MX</a>-->
+      <!--<a [routerLink]="['/notice-privacy']">Aviso de privacidad</a>
+      <a [routerLink]="['/terms-conditions']">Términos y condiciones</a>-->
+    </div>
+    <p (click)="openAdd()">Powered by Addinteli 2024</p>
+  </div>
+  
+  <div style="margin: 10px 0px; text-align: center">
+    <br>
+    <img src="../../../assets/img/logo_dark.png" height="160px" alt="">
+
+    <app-page-title [title]="title" style="color:var(--ion-color-primary-wisp);"></app-page-title>
+  </div>
+  
+
+  <!--<ion-list>
+
+    <ion-item (click)="openRecarga()" detail>
+      <ion-icon slot="start" name="reload-circle" style="color:var(--ion-color-secondary-wisp);"></ion-icon>
+      Recargar Plan
+    </ion-item>
+
+    <ion-item *ngFor="let page of pages" [routerLink]="page.redirectTo" detail>
+      <ion-icon slot="start" [name]="page.icon" style="color:var(--ion-color-secondary-wisp);"></ion-icon>
+      {{page.name | titlecase}}
+    </ion-item>
+  </ion-list>-->
+
+  <ion-button (click)="openRecarga()" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" name="reload-circle" style="color: var(--ion-color-primary-wisp);"></ion-icon>
+      Recargar plan
+    </div>
+  </ion-button>
+
+  <ion-button *ngFor="let page of pages" [routerLink]="page.redirectTo" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" [name]="page.icon" style="color: var(--ion-color-primary-wisp);"></ion-icon>
+      {{page.name | titlecase}}
+    </div>
+  </ion-button>
+
+</ion-content>
+
+<app-footer></app-footer>
+
+<style>
+  *{
+    color: #000;
+  }
+
+  ion-button {
+    margin: 0;
+    padding: 5px 0;
+    height: auto;
+    font-size: 15px;
+  }
+
+  .text_left {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+  }
+
+  .text_left ion-icon {
+    margin-right: 8px;
+    font-size: small;
+  }
+
+  .text_end {
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 300;
+    font-size: small;
+  }
+</style>

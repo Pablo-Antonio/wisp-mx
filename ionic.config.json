@@ -1,0 +1,8 @@
+{
+  "name": "Wips Mx",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
